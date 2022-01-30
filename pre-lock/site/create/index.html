@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <!-- Metadata -->
+  <meta charset="utf-8" />
+  <meta name="author" content="gitmaster-user" />
+  <meta name="description" content="Proteger con contraseña los enlaces usando AES en el navegador." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+  <title>Bloqueo de enlaces: enlaces protegidos con contraseña</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../style.css" type="text/css" />
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="../b64.js"></script>
+  <script type="text/javascript" src="../api.js"></script>
+  <script type="text/javascript">
+    function error(text) {
+      document.querySelector(".error").style.display = "inherit";
+      document.querySelector("#errortext").innerText = `Error: ${text}`;
+    }
+
+
+    // Run when the <body> loads
+    function main() {
+      // Fail if the b64 library or API was not loaded
+      if (!("b64" in window)) {
+        error("Base64 library not loaded.");
+        return;
+      }
+      if (!("apiVersions" in window)) {
+        error("API library not loaded.");
+        return;
+      }
+    }
+  </script>
+  <script type="text/javascript" src="create.js"></script>
+</head>
+
+<body onload="main()">
+  <!-- View on GitHub ribbon -->
+ 
+      <div>
+       <!-- --> <a href="https://gitmaster-user.github.io/pre-lock/site/"><button>Volver a prelock</button></a>
+      </div> <a href="https://gitmaster-user.github.io/" target="_blank">
+   <div> <img style="max-height:150px; max-width:150px; overflow: hidden" src="../corner-ribbon-minified.svg" alt="View on GitHub" />
+     </a></div>
+
+  <!-- Explanation for those who do not have JavaScript enabled -->
+  <noscript>
+  <div style="border: 3px solid red; padding: 2em;">
+    <p>If you are seeing this, it means that you have JavaScript disabled. As a result, the application will not work properly for you. For example, none of the buttons will work.</p>
+
+    <p>This application is entirely programmed in JavaScript. This was done intentionally, so that all encryption and decryption happens client-side. This means the code runs as a distributed application, relying only on GitHub Pages for infrastructure. It also means that no data about locked links is ever stored on a server. The code is designed to be auditable so users can investigate what is happening behind the scenes.</p>
+
+    <p>If you still want to run the application, I encourage you to clone the <a href="">source code on GitHub</a>. That way you can disable JavaScript only for trusted files on your local machine.</p>
+  </div>
+  </noscript>
+
+  <!-- Display errors in a big red box -->
+  <div class="error red-border" style="display: none">
+    <p id="errortext">Error</p>
+    <button onclick="main()">Intentar otra vez</button>
+  </div>
+
+  <hr />
+
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <!-- Metadata -->
+  <meta charset="utf-8" />
+  <meta name="author" content="gitmaster-user" />
+  <meta name="description" content="Proteger con contraseña los enlaces usando AES en el navegador." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+  <title>Decrypt Link Lock URLs</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../style.css" type="text/css" />
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="../b64.js"></script>
+  <script type="text/javascript" src="../api.js"></script>
+  <script type="text/javascript" src="decrypt.js"> </script>
+</head>
+
+<body onload="main()">
+  <!-- View on GitHub ribbon -->
+
+      <div>
+       <!-- --> <a href="https://purifyplay.github.io/"><button>Inicio</button></a>
+       <!-- --> <a href="https://purifyplay.github.io/redis/decrypt.html"><button>Desencriptar</button></a>
+       <!-- --> <a href="https://purifyplay.github.io/redis/hidden.html"><button>Crear marcador oculto</button></a>
+       <!-- --> <a href="https://purifyplay.github.io/redis/main.html"><button> Web Main </button></a>
+       <!-- --> <a href="https://purifyplay.github.io/todoapp/"><button> Lista de tareas propia </button></a>
+       <!-- --> <a href="../../main"><button> Menu 5 </button></a>
+      </div> <a href="https://purifyplay.github.io/" target="_blank">
+   <div> <img style="max-height:150px; max-width:150px; overflow: hidden" src="../corner-ribbon-minified.svg" alt="View on GitHub" />
+     </a></div>
+  <!-- Explanation for those who do not have JavaScript enabled -->
+  <noscript>
+  <div class="red-border">
+    <p>If you are seeing this, it means that you have JavaScript disabled. Please enable JavaScript to access the locked link.</p>
+
+    <p>This application is entirely programmed in JavaScript. This was done intentionally, so that all encryption and decryption happens client-side. This means the code runs as a distributed application, relying only on GitHub Pages for infrastructure. It also means that no data about locked links is ever stored on a server. The code is designed to be auditable so users can investigate what is happening behind the scenes.</p>
+
+    <p>If you still want to run the application, I encourage you to clone the <a href="https://github.com/gitmaster-user/link-lock">source code on GitHub</a>. That way you can disable JavaScript only for trusted files on your local machine.</p>
+  </div>
+  </noscript>
+
+  <!-- Display errors in a big red box -->
+  <div class="error red-border" style="display: none">
+    <p id="errortext">Error</p>
+    <button onclick="main()">Intentar otra vez</button>
+    <a href="https://purifyplay.github.io/redirection/site"><button>Bloquear un enlace</button></a>
+  </div>
+
+  <h1>Decrypt Link Lock URLs</h1>
+  <p>Esta aplicación es para descifrar <a href="https://github.com/gitmaster-user/link-lock" target="_blank">Link Lock</a> URL sin redirección automática. Esto es útil si no confía en la fuente de una URL cifrada. También es útil si la URL usa un protocolo bloqueado como <code>javascript:</code>, por ejemplo.</p>
+
+  <p>Esta página también es útil si cree que ha recibido un enlace bloqueado, pero utiliza otro dominio, en lugar de <code>gitmaster-user.github.io</code>. Esto puede hacerse como un medio para <a target="_blank" href="https://github.com/gitmaster-user/link-lock/#evading-censorship">evadir la censura</a>.</p>
+
+  <hr />
+
+  <div class="form">
+    <label for="encrypted-url">url encriptada</label>
+    <input type="url" id="encrypted-url" oninput="document.querySelector('.alert').style.opacity = 0" />
+    <label for="password">contraseña</label>
+    <input type="password" id="password" />
+    <button onclick="onDecrypt()">Desencriptar</button>
+    <p class="alert">INVISIBLE</p>
+  </div>
+
+  <hr />
+
+  <!-- Output area -->
+  <div class="output">
+    <label for="output">salida</label>
+    <input type="text" id="output" readonly/>
+    <button id="copy" onclick="onCopy('output')">Copiar</button>
+    <a href="" id="open" target="_blank"><button>Abrir en Nueva Pestaña</button></a>
+    <p class="alert" id="copy-alert">Copied</p>
+  </div>
+
+  <!-- Page footer -->
+  <footer>
+  <hr />
+  <p class="copyright">Created by <a href="https://github.com/">gitmaster-user</a>.</p>
+  </footer>
+</body>
+</body>
+
+</html>
