@@ -1,0 +1,16 @@
+{
+  "output": "..",
+  "locals": {
+    "url": "http://localhost:8080",
+    "name": "Online Tools",
+  },
+  "plugins": [
+  ],
+  "pug": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  }
+}
