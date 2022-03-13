@@ -1,0 +1,3 @@
+<Directory ~ "/rep/">
+  Options +Indexes
+</Directory>
