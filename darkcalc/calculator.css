@@ -1,0 +1,79 @@
+body {
+  line-height: 1;
+  background-color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 50px;
+  padding-top: 50px;
+  font-family: sans-serif;
+}
+
+.calc {
+  width: 430px;
+  background-color: #000000;color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  border: 5px solid #ffc1b6;
+}
+
+.calc .calc-output {
+  font-size: 75px;background-color: #000000;color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  padding: 7px;
+  overflow-x: scroll;
+}
+
+.calc .calc-buttons {
+  -ms-flex-wrap: wrap;background-color: #000000;color: white;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.calc .calc-buttons button {
+  padding: 0px;background-color: #000000;color: white;
+  border: 3px solid #ffc1b6;
+}
+
+.calc .calc-buttons .calc-but {
+  font-size: 60px;
+  width: 100px;background-color: #000000;color: white;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.body{background-color: #000000;color: white;}
+/*# sourceMappingURL=calculator.css.map */
